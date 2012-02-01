@@ -14,12 +14,14 @@ class Question(models.Model):
     selected = models.BooleanField()
     answered = models.BooleanField()
     votes = models.IntegerField(default=0)
+    # hidden = models.BooleanField()
+
+    def __str__(self):
+        return self.question + '(' + str(self.votes) + ')'
 
     def upvote(self, user):
         """Upvote this Question. If user has already voted, return."""
-        print ",",Votes.objects.filter(qn=self).filter(user=user),","
         if Votes.objects.filter(qn=self).filter(user=user).count() > 0:
-            print 'Already voted'
             return False
         new_vote = Votes(user=user, qn=self)
         new_vote.save()

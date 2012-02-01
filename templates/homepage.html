@@ -12,10 +12,10 @@
     <p>
         {% blocktrans %}
         <b>Kaelvi</b> is an online application intended to aggregate
-        questions from students during the class. Questions can be
-        moderated by your Teaching Assistants so that the Professor
-        gets to easily glance at the top questions. If you are
-        wondering why the name, Kaelvi is
+        questions from students during class. Questions are
+        moderated by your Teaching Assistants and the Professor
+        gets to easily glance at top questions. If you are
+        wondering about the name -- Kaelvi is
         a <a href="http://en.wikipedia.org/wiki/Tamil_language">Tamil</a>
         word meaning Question.
         {% endblocktrans %}
@@ -35,7 +35,7 @@
     
     {% if user.is_authenticated %}
         {% url what_next as what_next_url %}
-        <p class="what_next">{% blocktrans %}Wondering <a href="{{ what_next_url }}" class="btn primary large">What Next</a>?{% endblocktrans %}</p>
+        <p class="what_next">{% blocktrans %}Head on over to the <a href="/moderator/" class="btn primary large">Question List</a>.{% endblocktrans %}</p>
     {% else %}
         {% url acct_login as login_url %}
         {% ifsetting ACCOUNT_OPEN_SIGNUP %}
