@@ -38,7 +38,7 @@ def answer(request, qn_id):
     qn = Question.objects.get(id=qn_id)
     qn.answered = True
     qn.save()
-    return HttpResponseRedirect('/moderator')
+    return HttpResponseRedirect('/moderator/selected/')
   
 def selected(request):
     qns = Question.objects.filter(answered=False).filter(selected=True).order_by('-votes')
