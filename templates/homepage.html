@@ -3,28 +3,30 @@
 {% load i18n %}
 {% load ifsetting_tag %}
 
-{% block head_title %}{% trans "Welcome" %}{% endblock %}
+{% block head_title %}{% trans "Kaelvi Home Page" %}{% endblock %}
 
 {% block body_class %}home{% endblock %}
 
 {% block banner %}
-    <h1>{% trans "Welcome to Pinax" %}</h1>
+    <h1>{% trans "Welcome to Kaelvi /ke'lvi:/" %}</h1>
     <p>
         {% blocktrans %}
-        <b>Pinax</b> is a <a href="http://djangoproject.com/">Django</a>
-        project intended to provide a starting point for websites. By
-        integrating numerous reusable Django apps to take care of the
-        things that many sites have in common, it lets you focus on what
-        makes your site different.
+        <b>Kaelvi</b> is an online application intended to aggregate
+        questions from students during the class. Questions can be
+        moderated by your Teaching Assistants so that the Professor
+        gets to easily glance at the top questions.
         {% endblocktrans %}
     </p>
     
-    <h2>About Basic Project</h2>
+    <h2>About Kaelvi</h2>
     <p>
-        {% blocktrans %}
-        This project takes the account_project and adds profiles and notifications.
-        It is a foundation suitable for many sites that have user accounts with
-        profiles.
+        {% blocktrans %} Kaelvi is
+        a <a href="https://www.djangoproject.com">django</a> based
+        project written
+        by <a href="http://www.cs.berkeley.edu/~prmohan">Prashanth
+        Mohan</a> who clearly has too much time on his hands. If you
+        are interested in using this project for your class, he would
+        be most willing to help you set it up.
         {% endblocktrans %}
     </p>
     
