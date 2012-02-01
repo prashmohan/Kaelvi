@@ -1,0 +1,22 @@
+{% extends "banner_base.html" %}
+
+{% load i18n %}
+{% load ifsetting_tag %}
+
+{% block head_title %}{% trans "Selected Questions -- Kaelvi" %}{% endblock %}
+
+{% block body_class %}home{% endblock %}
+
+{% block banner %}
+    <h1>{% trans "Welcome to Kaelvi" %}</h1><br/><br/>
+<p>
+  {% for qn in qns %}
+    <div id="qn{{qn.id}}">
+      {{qn.question}} <br/><br/>
+      Up Votes: {{ qn.get_votes }}<br/>
+      <a href="/moderator/answer/{{qn.id}}" class="btn primary">Answered</a>
+      <hr size=5>
+    </div>
+  {% endfor %}
+</p>
+{% endblock %}

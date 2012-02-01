@@ -26,7 +26,9 @@ urlpatterns = patterns("",
     url(r"^moderator/$", 'moderator.views.index'),
     url(r"^moderator/add$", direct_to_template, {"template": "add_question.html"}),
     url(r"^moderator/submit$", 'moderator.views.submit'),
-    url(r"^moderator/voteup/(?P<qn_id>\d+)/$", 'moderator.views.voteup'),                       
+    url(r"^moderator/voteup/(?P<qn_id>\d+)/$", 'moderator.views.voteup'),
+    url(r"^moderator/answer/(?P<qn_id>\d+)/$", 'moderator.views.answer'),                       
+    url(r"^moderator/selected/$", 'moderator.views.selected'),
 )
 
 
