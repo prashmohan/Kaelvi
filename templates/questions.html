@@ -1,0 +1,34 @@
+{% extends "banner_base.html" %}
+
+{% load i18n %}
+{% load ifsetting_tag %}
+
+{% block head_title %}{% trans "Questions -- Kaelvi" %}{% endblock %}
+
+{% block body_class %}home{% endblock %}
+
+{% block banner %}
+    <h1>{% trans "Welcome to Kaelvi" %}</h1><br/><br/>
+    {% if user.is_authenticated %}
+      <h3>{% trans "Add Question:" %}</h3>
+  <form action="/moderator/submit" method="post">{% csrf_token %}
+    <textarea rows="3" cols="30" name="question"></textarea>
+    <input type="submit" value="Submit" class="btn primary large" align="middle"/>
+  </form>
+  {% endif %}
+<p>
+  {% for qn in qns %}
+    <div id="qn{{qn.id}}">
+      {{qn.question}} <br/><br/>
+      {% if user.is_authenticated %}
+      Up Votes: {{ qn.get_votes }}<br/>
+      <a href="/moderator/voteup/{{qn.id}}" class="btn primary">Vote Up</a>
+      {% else %}
+      <a href="/account/signup" class="btn primary">Sign Up</a> or <a href="/account/login" class="btn primary">Log In</a> to vote on questions.
+      {% endif %}
+      
+      <hr size=5>
+    </div>
+  {% endfor %}
+</p>
+{% endblock %}

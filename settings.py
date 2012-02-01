@@ -173,6 +173,7 @@ INSTALLED_APPS = [
     # project
     "about",
     "profiles",
+    "moderator",
 ]
 
 FIXTURE_DIRS = [

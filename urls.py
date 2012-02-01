@@ -23,6 +23,10 @@ urlpatterns = patterns("",
     url(r"^profiles/", include("idios.urls")),
     url(r"^notices/", include("notification.urls")),
     url(r"^announcements/", include("announcements.urls")),
+    url(r"^moderator/$", 'moderator.views.index'),
+    url(r"^moderator/add$", direct_to_template, {"template": "add_question.html"}),
+    url(r"^moderator/submit$", 'moderator.views.submit'),
+    url(r"^moderator/voteup/(?P<qn_id>\d+)/$", 'moderator.views.voteup'),                       
 )
 
 

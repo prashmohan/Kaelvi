@@ -1,0 +1,22 @@
+{% extends "banner_base.html" %}
+
+{% load i18n %}
+{% load ifsetting_tag %}
+
+{% block head_title %}{% trans "Add Question -- Kaelvi" %}{% endblock %}
+
+{% block body_class %}home{% endblock %}
+
+{% block banner %}
+  {% if user.is_authenticated %}
+  <h2>{% trans "Welcome to Kaelvi /ke'lvi:/" %}</h2>
+  <h3>{% trans "Add Question:" %}</h3>
+  <form action="/moderator/submit" method="post">
+    {% csrf_token %}
+    <textarea rows="3" cols="30" name="question"></textarea>
+    <input type="submit" value="Submit" class="btn primary large" align="middle"/>
+  </form>
+  {% else %}
+  <p> You need to be authenticated to add a question </p>
+  {% endif %}
+{% endblock %}
