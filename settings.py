@@ -29,7 +29,7 @@ MANAGERS = ADMINS
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3", # Add "postgresql_psycopg2", "postgresql", "mysql", "sqlite3" or "oracle".
-        "NAME": "dev.db",                       # Or path to database file if using sqlite3.
+        "NAME": "/var/www/Kaelvi/dev.db",                       # Or path to database file if using sqlite3.
         "USER": "",                             # Not used with sqlite3.
         "PASSWORD": "",                         # Not used with sqlite3.
         "HOST": "",                             # Set to empty string for localhost. Not used with sqlite3.
@@ -219,3 +219,8 @@ try:
     from local_settings import *
 except ImportError:
     pass
+
+from os.path import abspath, join, dirname
+
+PINAX_ROOT = abspath(join(dirname(__file__), "../../"))
+PROJECT_ROOT = abspath(dirname(__file__))
