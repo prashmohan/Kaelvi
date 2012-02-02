@@ -19,7 +19,7 @@
 <p>
   {% for qn in qns %}
     <div id="qn{{qn.id}}">
-      {{qn.question}} <br/><br/>
+      <h3>{{qn.question}}</h3> <br/>
       {% if user.is_authenticated %}
       Up Votes: {{ qn.get_votes }}<br/>
       <a href="/moderator/voteup/{{qn.id}}" class="btn primary">Vote Up</a>
