@@ -12,7 +12,7 @@
 <p>
   {% for qn in qns %}
     <div id="qn{{qn.id}}">
-      {{qn.question}} <br/><br/>
+      <h2>{{qn.question}}</h2><br/>
       Up Votes: {{ qn.get_votes }}<br/>
       <a href="/moderator/answer/{{qn.id}}" class="btn primary">Answered</a>
       <hr size=5>
