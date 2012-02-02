@@ -29,6 +29,7 @@ urlpatterns = patterns("",
     url(r"^moderator/voteup/(?P<qn_id>\d+)/$", 'moderator.views.voteup'),
     url(r"^moderator/answer/(?P<qn_id>\d+)/$", 'moderator.views.answer'),                       
     url(r"^moderator/selected/$", 'moderator.views.selected'),
+    url(r"^selected/$", 'moderator.views.selected'),                       
 )
 
 
