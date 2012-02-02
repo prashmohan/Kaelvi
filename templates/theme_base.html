@@ -2,7 +2,7 @@
 <html lang="{{ LANGUAGE_CODE }}">
     <head>
         <meta charset="utf-8" />
-        <title>{% block head_title_base %}{% if SITE_NAME %}{{ SITE_NAME }} : {% endif %}{% block head_title %}{% endblock %}{% endblock %}</title>
+        <title>{% block head_title_base %}{% if SITE_NAME %} Kaelvi : {% endif %}{% block head_title %}{% endblock %}{% endblock %}</title>
         <!-- HTML5 shim, for IE6-8 support of HTML elements -->
         <!--[if lt IE 9]>
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -32,7 +32,7 @@
                 <div class="fill">
                     <div class="container">
                         {% block topbar %}
-                            <h3><a href="{% url home %}">{{ SITE_NAME }}</a></h3>
+                            <h3><a href="{% url home %}">Kaelvi</a></h3>
                             {% block nav %}{% endblock %}
                             {% block account_bar %}{% include "_account_bar.html" %}{% endblock %}
                         {% endblock %}
